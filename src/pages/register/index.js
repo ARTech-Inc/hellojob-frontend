@@ -5,7 +5,7 @@ const Register = () => {
     <>
       {/* <Header /> */}
       <div></div>
-      <div className="px-[20px] py-[30px] bg-slate-200 sm:flex justify-evenly">
+      <div className="h-[100vh] px-[20px] py-[30px] bg-slate-200 sm:flex justify-evenly">
         <div className="invisible w-[0px] h-[0px] max-sm:hidden sm:visible p-[10px] w-[30vw] h-[90vh] bg-hero bg-no-repeat">
           <img
             src={require("../../assets/img/app-logo-white.png")}
