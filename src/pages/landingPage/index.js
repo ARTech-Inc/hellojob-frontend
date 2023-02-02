@@ -5,8 +5,8 @@ const LandingPage = () => {
   return (
     <>
       <Header />
-      <div className="p-[100px]">
-        <div className="flex py-[30px]">
+      <div className="p-[20px] sm:p-[100px] w-[100%]">
+        <div className="flex py-[30px] w-[100%]">
           <div className="p-[10px]">
             <h1 className="text-[50px] py-[10px]">
               Talenta terbaik negeri untuk perubahan revolusi 4.0
@@ -19,12 +19,12 @@ const LandingPage = () => {
               Mulai Dari Sekarang
             </button>
           </div>
-          <div className="flex justify-end w-[100%] py-[10px]  ">
+          <div className="flex justify-end w-[100%] py-[10px]  max-sm:hidden sm:visible">
             <img src={require("../../assets/img/background1.png")} />
           </div>
         </div>
-        <div className="flex py-[30px]">
-          <div className="flex justify-start w-[100%] py-[10px]  ">
+        <div className="flex py-[30px] w-[100%]">
+          <div className="flex justify-start w-[100%] py-[10px] max-sm:hidden sm:visible">
             <img src={require("../../assets/img/background2.png")} />
           </div>
           <div className="p-[10px]">
@@ -39,7 +39,7 @@ const LandingPage = () => {
             </ul>
           </div>
         </div>
-        <div className="flex py-[30px]">
+        <div className="flex py-[30px] w-[100%]">
           <div className="p-[10px]">
             <h1 className="text-[50px] py-[10px]">Skill Talent</h1>
             <h2 className="block py-[10px]">
@@ -61,11 +61,11 @@ const LandingPage = () => {
               </ul>
             </div>
           </div>
-          <div className="flex justify-end w-[100%] py-[10px]  ">
+          <div className="flex justify-end w-[100%] py-[10px] max-sm:hidden sm:visible">
             <img src={require("../../assets/img/background3.png")} />
           </div>
         </div>
-        <div className="fourth section">
+        <div className="fourth section w-[100%]">
           <h1 className="py-[30px] text-center font-bold text-[25px]">
             Their Opinion About Peworld
           </h1>
@@ -86,7 +86,7 @@ const LandingPage = () => {
                 euismod ipsum et dui rhoncus auctor.
               </h3>
             </div>
-            <div className="border-[1px] border-gray shadow-2xl p-[20px]">
+            {/* <div className="border-[1px] border-gray shadow-2xl p-[20px]">
               <div className="flex justify-center">
                 <img
                   src={require("../../assets/img/background1.png")}
@@ -101,8 +101,8 @@ const LandingPage = () => {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
                 euismod ipsum et dui rhoncus auctor.
               </h3>
-            </div>
-            <div className="border-[1px] border-gray shadow-2xl p-[20px]">
+            </div> */}
+            {/* <div className="border-[1px] border-gray shadow-2xl p-[20px]">
               <div className="flex justify-center">
                 <img
                   src={require("../../assets/img/background1.png")}
@@ -117,15 +117,15 @@ const LandingPage = () => {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
                 euismod ipsum et dui rhoncus auctor.
               </h3>
-            </div>
+            </div> */}
           </div>
         </div>
-        <div className="flex justify-between border-[1px] rounded-tl-lg rounded-br-lg bg-[#5E50A1] px-[30px] py-[20px] my-[100px]">
-          <h1 className="text-[30px] text-[#FFFFFF] w-[200px]">
+        <div className="flex justify-between border-[1px] rounded-tl-lg rounded-br-lg bg-[#5E50A1] px-[30px] py-[20px] my-[100px] w-[100%]">
+          <h1 className="text-[10px] p-[10px] sm:text-[30px] text-[#FFFFFF] w-[200px]">
             Lorem ipsum dolor sit amet
           </h1>
           <div className="flex items-center">
-            <button className="bg-[#FFFFFF] text-[20px] rounded p-[10px] text-[#5E50A1]">
+            <button className="bg-[#FFFFFF] text-[10px] sm:text-[20px] rounded p-[10px] text-[#5E50A1]">
               Mulai dari sekarang
             </button>
           </div>
