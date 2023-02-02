@@ -3,6 +3,8 @@ import "./App.css";
 
 import Register from "./pages/register";
 import LandingPage from "./pages/landingPage";
+import UserProfile from "./pages/userProfile";
+
 import configureStore from "./redux/store";
 
 import { Provider } from "react-redux";
@@ -18,6 +20,7 @@ function App() {
           <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/userProfile" element={<UserProfile />} />
           </Routes>
         </BrowserRouter>
       </Provider>
