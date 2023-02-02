@@ -1,5 +1,6 @@
 import Header from "../../component/header";
 import Footer from "../../component/footer";
+import { Link } from "react-router-dom";
 
 const UserProfile = () => {
   return (
@@ -25,7 +26,9 @@ const UserProfile = () => {
             erat orci, mollis nec gravida sed, ornare quis urna. Curabitur eu
             lacus fringilla, vestibulum risus at.
           </h3>
-          <button className="btn w-[100%] bg-purple-500 rounded">Hire</button>
+          <Link to={`/halamanHire/`}>
+            <button className="btn w-[100%] bg-purple-500 rounded">Hire</button>
+          </Link>
           <div>
             <h1 className="font-bold text-[20px] py-[10px]">Skill</h1>
             <div className="w-[100%] flex">
