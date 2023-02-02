@@ -1,0 +1,8 @@
+npm i react-router-dom
+npm i axios 
+
+npm install -D tailwindcss
+
+npm install redux
+npm install react-redux
+npm install redux-thunk
