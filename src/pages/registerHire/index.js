@@ -3,12 +3,14 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-const Register = () => {
+const RegisterHire = () => {
   const [registerForm, setRegisterForm] = useState({
     name: "",
     email: "",
     phone: "",
     password: "",
+    perusahaan: "",
+    bidang_perusahaan: "",
   });
   const [validate, setValidate] = useState({ error: false, message: "" });
   const Navigate = useNavigate();
@@ -34,7 +36,7 @@ const Register = () => {
     <>
       {/* <Header /> */}
       <form onSubmit={handleRegister}>
-        <div className="h-[100vh] px-[20px] py-[30px] bg-slate-200 sm:flex justify-evenly">
+        <div className="h-[100%] px-[20px] py-[30px] bg-slate-200 sm:flex justify-evenly">
           {validate.error && (
             <div className="alert alert-error shadow-lg my-3">
               <div>
@@ -55,7 +57,7 @@ const Register = () => {
               </div>
             </div>
           )}
-          <div className="invisible w-[0px] h-[0px] max-sm:hidden sm:visible p-[10px] w-[30vw] h-[90vh] bg-hero bg-no-repeat">
+          <div className="invisible w-[0px] h-[0px] max-sm:hidden sm:visible p-[10px] w-[30vw] h-[110vh] bg-hero bg-no-repeat ">
             <img
               src={require("../../assets/img/app-logo-white.png")}
               className="h-[20px] w-[60px] m-[20px]"
@@ -99,6 +101,28 @@ const Register = () => {
                 className="block border-[1px] mb-[16px] w-[100%] md:w-[100%]"
                 type="email"
               ></input>
+              <label className="block">Nama Perusahaan</label>
+              <input
+                onChange={(e) =>
+                  setRegisterForm({
+                    ...registerForm,
+                    perusahaan: e.target.value,
+                  })
+                }
+                className="block border-[1px] mb-[16px] w-[100%] md:w-[100%]"
+                type="text"
+              ></input>
+              <label className="block">Bidang Perusahaan</label>
+              <input
+                onChange={(e) =>
+                  setRegisterForm({
+                    ...registerForm,
+                    bidang_perusahaan: e.target.value,
+                  })
+                }
+                className="block border-[1px] mb-[16px] w-[100%] md:w-[100%]"
+                type="text"
+              ></input>
               <label className="block">No. Handphone</label>
               <input
                 onChange={(e) =>
@@ -108,9 +132,9 @@ const Register = () => {
                   })
                 }
                 className="block border-[1px] mb-[16px] w-[100%] md:w-[100%]"
-                type="phone"
+                type="talent"
               ></input>
-              <label className="block">Kode Sandi</label>
+              <label className="block">Kata Sandi</label>
               <input
                 onChange={(e) =>
                   setRegisterForm({
@@ -121,7 +145,7 @@ const Register = () => {
                 className="block border-[1px] mb-[16px] w-[100%] md:w-[100%]"
                 type="password"
               ></input>
-              <label className="block">konfirmasi kode sandi</label>
+              <label className="block">Konfirmasi Kata Sandi</label>
               <input
                 className="block border-[1px] mb-[16px] w-[100%] md:w-[100%]"
                 type="password"
@@ -137,4 +161,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default RegisterHire;
