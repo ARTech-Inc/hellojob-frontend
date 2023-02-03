@@ -9,18 +9,20 @@ const Register = () => {
     email: "",
     phone: "",
     password: "",
-    confirmpass: "",
   });
+  const [validate, setValidate] = useState({ error: false, message: "" });
   const Navigate = useNavigate();
+
   const handleRegister = (event) => {
     event.preventDefault();
-    axios({
-      url: "",
-      method: "POST",
-      data: registerForm,
-    })
-      .then((res) => {})
-      .catch((err) => {});
+    console.log(registerForm);
+    //   axios({
+    //     url: "",
+    //     method: "POST",
+    //     data: registerForm,
+    //   })
+    //     .then((res) => {})
+    //     .catch((err) => {});
   };
 
   return (
@@ -28,6 +30,26 @@ const Register = () => {
       {/* <Header /> */}
       <form onSubmit={handleRegister}>
         <div className="h-[100vh] px-[20px] py-[30px] bg-slate-200 sm:flex justify-evenly">
+          {validate.error && (
+            <div className="alert alert-error shadow-lg my-3">
+              <div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="stroke-current flex-shrink-0 h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                <span>{validate.message}</span>
+              </div>
+            </div>
+          )}
           <div className="invisible w-[0px] h-[0px] max-sm:hidden sm:visible p-[10px] w-[30vw] h-[90vh] bg-hero bg-no-repeat">
             <img
               src={require("../../assets/img/app-logo-white.png")}
@@ -63,16 +85,34 @@ const Register = () => {
               ></input>
               <label className="block ">Email</label>
               <input
+                onChange={(e) =>
+                  setRegisterForm({
+                    ...registerForm,
+                    email: e.target.value,
+                  })
+                }
                 className="block border-[1px] mb-[16px] w-[100%] md:w-[100%]"
                 type="email"
               ></input>
               <label className="block">No. Handphone</label>
               <input
+                onChange={(e) =>
+                  setRegisterForm({
+                    ...registerForm,
+                    phone: e.target.value,
+                  })
+                }
                 className="block border-[1px] mb-[16px] w-[100%] md:w-[100%]"
                 type="phone"
               ></input>
               <label className="block">Kode Sandi</label>
               <input
+                onChange={(e) =>
+                  setRegisterForm({
+                    ...registerForm,
+                    password: e.target.value,
+                  })
+                }
                 className="block border-[1px] mb-[16px] w-[100%] md:w-[100%]"
                 type="password"
               ></input>
