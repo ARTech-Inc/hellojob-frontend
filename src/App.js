@@ -6,6 +6,7 @@ import LandingPage from "./pages/landingPage";
 import UserProfile from "./pages/userProfile";
 import HalamanHire from "./pages/halamanHire";
 import RegisterHire from "./pages/registerHire";
+import LoginOption from "./pages/loginOption";
 
 import configureStore from "./redux/store";
 
@@ -25,6 +26,7 @@ function App() {
             <Route path="/userProfile" element={<UserProfile />} />
             <Route path="/halamanHire" element={<HalamanHire />} />
             <Route path="/registerHire" element={<RegisterHire />} />
+            <Route path="/loginOption" element={<LoginOption />} />
           </Routes>
         </BrowserRouter>
       </Provider>

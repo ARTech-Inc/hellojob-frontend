@@ -14,7 +14,7 @@ const UnLogin = () => {
             Masuk
           </button>
           <button className="btn px-[10px] border-[1px] bg-[#5E50A1] font-bold text-[#FFFFFF] mx-[10px] rounded">
-            <Link to="/register">Daftar</Link>
+            <Link to="/loginOption">Daftar</Link>
           </button>
         </div>
       </div>
