@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 
 const Register = () => {
   const [registerForm, setRegisterForm] = useState({
-    username: "",
+    name: "",
     email: "",
     phone: "",
     password: "",
@@ -23,7 +23,7 @@ const Register = () => {
     // })
     //   .then((res) => {
     //     console.log(res.data.data);
-    //     Navigate("/landingPage");
+    //     Navigate("/");
     //   })
     //   .catch((err) => {
     //     setValidate({ error: true, message: err.message });
@@ -82,7 +82,7 @@ const Register = () => {
                 onChange={(e) =>
                   setRegisterForm({
                     ...registerForm,
-                    username: e.target.value,
+                    name: e.target.value,
                   })
                 }
                 className="block border-[1px] mb-[16px] w-[100%] md:w-[100%]"
