@@ -16,13 +16,18 @@ const Register = () => {
   const handleRegister = (event) => {
     event.preventDefault();
     console.log(registerForm);
-    //   axios({
-    //     url: "",
-    //     method: "POST",
-    //     data: registerForm,
+    // axios({
+    //   url: "",
+    //   method: "POST",
+    //   data: registerForm,
+    // })
+    //   .then((res) => {
+    //     console.log(res.data.data);
+    //     Navigate("/landingPage");
     //   })
-    //     .then((res) => {})
-    //     .catch((err) => {});
+    //   .catch((err) => {
+    //     setValidate({ error: true, message: err.message });
+    //   });
   };
 
   return (
