@@ -10,9 +10,9 @@ const UnLogin = () => {
           alt=""
         />
         <div className="flex">
-          <button className="btn px-[10px] border-[2px] border-[#5E50A1] font-bold text-[#5E50A1] mx-[10px] rounded">
+          <Link to={"/login"} className="btn px-[10px] border-[2px] border-[#5E50A1] font-bold text-[#5E50A1] mx-[10px] rounded">
             Masuk
-          </button>
+          </Link>
           <button className="btn px-[10px] border-[1px] bg-[#5E50A1] font-bold text-[#FFFFFF] mx-[10px] rounded">
             <Link to="/loginOption">Daftar</Link>
           </button>
