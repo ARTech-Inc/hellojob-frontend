@@ -5,7 +5,7 @@ const LandingPage = () => {
   return (
     <>
       <Header />
-      <div className="p-[20px] sm:p-[100px] w-[100%]">
+      <div className="p-[20px] sm:p-[100px] w-[100%] bg-white-500">
         <div className="flex py-[30px] w-[100%]">
           <div className="p-[10px]">
             <h1 className="text-[50px] py-[10px]">
