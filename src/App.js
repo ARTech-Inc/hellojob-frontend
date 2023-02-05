@@ -32,7 +32,7 @@ function App() {
             <Route path="/halamanHire" element={<HalamanHire />} />
             <Route path="/registerHire" element={<RegisterHire />} />
             <Route path="/loginOption" element={<LoginOption />} />
-            <Route path="/editProfile/:id" element={<EditProfile />} />
+            <Route path="/editProfile/" element={<EditProfile />} />
           </Routes>
         </BrowserRouter>
       </Provider>

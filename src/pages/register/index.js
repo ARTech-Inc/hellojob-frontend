@@ -9,6 +9,7 @@ const Register = () => {
     email: "",
     phone: "",
     password: "",
+    role: "pekerja",
   });
   const [validate, setValidate] = useState({ error: false, message: "" });
   const Navigate = useNavigate();

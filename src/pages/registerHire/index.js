@@ -11,6 +11,7 @@ const RegisterHire = () => {
     password: "",
     perusahaan: "",
     bidang_perusahaan: "",
+    role: "perekrut",
   });
   const [validate, setValidate] = useState({ error: false, message: "" });
   const Navigate = useNavigate();
