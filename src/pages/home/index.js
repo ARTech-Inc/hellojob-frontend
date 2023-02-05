@@ -63,15 +63,17 @@ function Home(){
                         <img className="w-full mx-5 " src={require("../../assets/img/avatar2.png")} alt="" />
                         <div className="flex-col">
                             <h2 className="text-md font-semibold">{item.name}</h2>
-                            <p className="text-[0.8rem]">Web Developer</p>
+                            <p className="text-[0.8rem]">{item.job_desk} - {item.job_status}</p>
                             <div className="flex space-x-1 pt-1">
                                 <img className="w-5" src={require("../../assets/img/map-pin.png")}/>
-                                <p className="text-[0.8rem]">Yogyakarta</p>
+                                <p className="text-[0.8rem]">{item.domisili}</p>
                             </div>
                             <div className="flex space-x-2">
-                                <button className="bg-yellow-400 border-none text-[0.7rem] px-3 py-1 rounded-md mt-3 text-white font-bold">PHP</button>
-                                <button className="bg-yellow-400 border-none text-[0.7rem] px-3 py-1 rounded-md mt-3 text-white font-bold">Javascript</button>
-                                <button className="bg-yellow-400 border-none text-[0.7rem] px-3 py-1 rounded-md mt-3 text-white font-bold">HTML</button>
+                                {item.skills.map((index)=> {
+                                    return index ? (
+                                    <button className="bg-yellow-400 border-none text-[0.7rem] px-3 py-1 rounded-md mt-3 text-white font-bold">{index.skill_name}</button>
+                                    ) : ("")
+                                })}
                             </div>
                         </div>
                     </div>

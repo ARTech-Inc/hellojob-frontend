@@ -6,11 +6,12 @@ import axios from "axios";
 
 const UserProfile = () => {
   const { id } = useParams();
-  const [dataUser, setDataUser] = useState([]);
+  const [dataUser, setDataUser] = useState([])
+
   
   useEffect(()=>{
     axios.get(`http://localhost:5000/api/v1/users/${id}`)
-    .then((response) => console.log(response.data.data))
+    .then((response) => setDataUser(response.data.data))
     .catch((error) => console.log(error.message))
   },[])
 
@@ -19,23 +20,32 @@ const UserProfile = () => {
       <Header />
       <div className="px-[200px] py-[20px] flex justify-center bg-gradient-to-b from-purple-500">
         <div className="border-[1px] bg-white border-gray shadow-2xl p-[20px] mx-[10px]">
-          <div className="flex justify-center">
+          {dataUser.map((item)=>{
+            return(
+              <>
+            <div className="flex justify-center">
             <img
               src={require("../../assets/img/background1.png")}
               className="w-[100px] h-[100px] rounded-full"
             />
           </div>
-          <h1 className="font-bold text-[30px]">{dataUser.name}</h1>
-          <a className="text-gray-500 text-[20px] block">{dataUser.job_desk}</a>
-          <a className="text-gray-500 text-[20px] block">
-            {dataUser.job_status}
-          </a>
-          <a className="text-gray-500 text-[20px] block">{dataUser.domisili}</a>
-          <a className="text-gray-500 text-[20px] block">{dataUser.phone}</a>
-          <h3 className="w-[200px] py-[10px]">{dataUser.description}</h3>
-          <Link to={`/halamanHire/`}>
-            <button className="btn w-[100%] bg-purple-500 rounded">Hire</button>
-          </Link>
+
+            <h1 className="font-bold text-[30px]">{item.name}</h1>
+            <a className="text-gray-500 text-[20px] block">{item.job_desk}</a>
+            <a className="text-gray-500 text-[20px] block">
+              {item.job_status}
+            </a>
+            <a className="text-gray-500 text-[20px] block">{item.domisili}</a>
+            <a className="text-gray-500 text-[20px] block">{item.phone}</a>
+            <h3 className="w-[200px] py-[10px]">{item.description}</h3>
+            <Link to={`/halamanHire/`}>
+              <button className="btn w-[100%] bg-purple-500 rounded">Hire</button>
+            </Link>
+            </>
+            )
+          })}
+          
+          
           <div>
             <h1 className="font-bold text-[20px] py-[10px]">Skill</h1>
             <div className="w-[100%] flex">
