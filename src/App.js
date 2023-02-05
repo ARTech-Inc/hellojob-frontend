@@ -29,7 +29,7 @@ function App() {
             <Route path="/login" element={<Login/>} />
             <Route path="/register" element={<Register />} />
             <Route path="/home" element={<Home />} />
-            <Route path="/userProfile" element={<UserProfile />} />
+            <Route path="/userProfile/:id" element={<UserProfile />} />
             <Route path="/halamanHire" element={<HalamanHire />} />
             <Route path="/registerHire" element={<RegisterHire />} />
             <Route path="/loginOption" element={<LoginOption />} />

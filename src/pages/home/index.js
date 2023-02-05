@@ -7,11 +7,19 @@ import { useState, useEffect } from "react"
 
 function Home(){
 
+    // const sortSkill = () => {
+    //     useEffect(()=>{
+    //         axios.get("")
+    //     })
+    // }
+
     const [dataUsers, setDataUsers] = useState([])
+    const [query, setQuery] = useState("")
 
     useEffect(()=>{
         axios.get("http://localhost:5000/api/v1/users")
-        .then((response) => setDataUsers(response.data.data))
+        .then((response) => {setDataUsers(response.data.data)
+        console.log(response.data.data)})
         .catch((error) => console.log(error.message))
     }, [])
 
@@ -24,7 +32,11 @@ function Home(){
 
             <section className="container search mx-auto">
                 <div className="w-full shadow-xl mt-5 flex space-x-7 p-3 items-center content-between rounded-md">
-                    <input type="text" placeholder="Search for any skill" className="input flex-1"></input>
+                    <input 
+                    onChange={e => setQuery(e.target.value)}
+                    type="text" 
+                    placeholder="Search for any skill" 
+                    className="input flex-1"></input>
                     <img src={require("../../assets/img/search.png")} alt="search" />
                     
                     <div className="dropdown dropdown-end px-2">
@@ -44,14 +56,14 @@ function Home(){
             
             <section className="workers container rounded-md mx-auto shadow-lg p-3 my-10 flex-col justify-between">
 
-                {dataUsers.map((item)=>{
+                {dataUsers.filter(item => item.name.toLowerCase().includes(query.toLowerCase())).map((item)=>{
                     return(
                         <div className="flex items-center justify-between mt-10 pb-10 border-b-4" key={item.id}>
                         <div className="flex">
                         <img className="w-full mx-5 " src={require("../../assets/img/avatar2.png")} alt="" />
                         <div className="flex-col">
                             <h2 className="text-md font-semibold">{item.name}</h2>
-                            <p className="text-[0.8rem]">{item.skill_name}</p>
+                            <p className="text-[0.8rem]">Web Developer</p>
                             <div className="flex space-x-1 pt-1">
                                 <img className="w-5" src={require("../../assets/img/map-pin.png")}/>
                                 <p className="text-[0.8rem]">Yogyakarta</p>
@@ -63,7 +75,7 @@ function Home(){
                             </div>
                         </div>
                     </div>
-                    <button className="btn bg-[#5E50A1]">Lihat Profile</button>
+                    <a href={`/userProfile/${item.id}`} className="btn bg-[#5E50A1]">Lihat Profile</a>
                     </div>    
                     
                     )

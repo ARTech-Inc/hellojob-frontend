@@ -2,19 +2,18 @@ import Header from "../../component/header";
 import Footer from "../../component/footer";
 import { Link, useParams } from "react-router-dom";
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 const UserProfile = () => {
-  let { id } = useParams();
+  const { id } = useParams();
   const [dataUser, setDataUser] = useState([]);
-  // useEffect(()=>{
-  //   axios
-  //     .get(`${id}`)
-  //     .then((res) => {
-  //       // console.log(dataProduct.images);
-  //       setDataUser(res.data.data);
-  //     })
-  //     .catch((err) => console.log(err));
-  // })
+  
+  useEffect(()=>{
+    axios.get(`http://localhost:5000/api/v1/users/${id}`)
+    .then((response) => console.log(response.data.data))
+    .catch((error) => console.log(error.message))
+  },[])
+
   return (
     <>
       <Header />

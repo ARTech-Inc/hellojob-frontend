@@ -37,7 +37,7 @@ function Login(){
         <section className="h-full flex justify-center items-center flex-wrap">
           <div className=" bg-gray-100 h-[60] flex items-center flex-wrap">
             <div className="w-[30vw] flex flex-wrap">
-              <img className="h-full w-full" src={require("../../assets/img/background1purple.png")} alt="img-h" />
+              <img className="h-full w-full " src={require("../../assets/img/background1purple.png")} alt="img-h" />
             </div>
 
             <form onSubmit={HandleLogin}>
