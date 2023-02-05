@@ -13,22 +13,32 @@ const Register = () => {
   });
   const [validate, setValidate] = useState({ error: false, message: "" });
   const Navigate = useNavigate();
+  const bodyRegister = new FormData();
+
+  bodyRegister.append("name", registerForm.name);
+  bodyRegister.append("email", registerForm.email);
+  bodyRegister.append("phone", registerForm.phone);
+  bodyRegister.append("password", registerForm.password);
+  bodyRegister.append("role", registerForm.role);
 
   const handleRegister = (event) => {
     event.preventDefault();
     console.log(registerForm);
-    // axios({
-    //   url: "",
-    //   method: "POST",
-    //   data: registerForm,
-    // })
-    //   .then((res) => {
-    //     console.log(res.data.data);
-    //     Navigate("/");
-    //   })
-    //   .catch((err) => {
-    //     setValidate({ error: true, message: err.message });
-    //   });
+    axios({
+      url: "http://localhost:5000/api/v1/auth/register",
+      method: "POST",
+      data: bodyRegister,
+      headers: { "Content-Type": "multipart/form-data" },
+    })
+      .then((res) => {
+        console.log(res.data.data);
+        setRegisterForm(res.data.data);
+        alert(res.data.message);
+        Navigate("/login");
+      })
+      .catch((err) => {
+        setValidate({ error: true, message: err.response.data.message });
+      });
   };
 
   return (
@@ -127,7 +137,10 @@ const Register = () => {
                 className="block border-[1px] mb-[16px] w-[100%] md:w-[100%]"
                 type="password"
               ></input>
-              <button className="btn width-[100%] bg-yellow-500 w-[100%] rounded">
+              <button
+                className="btn width-[100%] bg-yellow-500 w-[100%] rounded"
+                type="submit"
+              >
                 Daftar
               </button>
             </div>
