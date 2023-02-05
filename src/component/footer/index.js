@@ -13,7 +13,7 @@ const Footer = () => {
           </h1>
           <hr className="my-[20px]"></hr>
           <div className="flex justify-between text-[#FFFFFF]">
-            <h1>2020 Pewworld. All right reserved</h1>
+            <h1>2020 HelloJob. All right reserved</h1>
             <div className="flex ">
               <a className="px-[10px]">Telepon</a>
               <a className="px-[10px]">Email</a>

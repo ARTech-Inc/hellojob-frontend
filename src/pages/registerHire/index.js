@@ -36,7 +36,7 @@ const RegisterHire = () => {
     <>
       {/* <Header /> */}
       <form onSubmit={handleRegister}>
-        <div className="h-[100%] px-[20px] py-[30px] bg-slate-200 sm:flex justify-evenly">
+        <div className="h-[100vh] px-[20px] py-[30px] bg-slate-200 sm:flex justify-evenly">
           {validate.error && (
             <div className="alert alert-error shadow-lg my-3">
               <div>
@@ -60,7 +60,7 @@ const RegisterHire = () => {
           <div className="invisible w-[0px] h-[0px] max-sm:hidden sm:visible p-[10px] w-[30vw] h-[110vh] bg-hero bg-no-repeat ">
             <img
               src={require("../../assets/img/app-logo-white.png")}
-              className="h-[20px] w-[60px] m-[20px]"
+              className="m-[20px]"
             />
             <h1 className="font-bold m-[20px] text-[35px] text-[#FFFFFF]">
               Temukan developer berbakat & terbaik di berbagai bidang keahlian
@@ -78,7 +78,7 @@ const RegisterHire = () => {
             </div>
             <h1 className="text-[30px] font-bold">Sign Up</h1>
             <h2>Lorom ipsum dolor si amet uegas anet.</h2>
-            <div className="input my-[10px]">
+            <div className="my-[10px]">
               <label className="block">Nama</label>
               <input
                 onChange={(e) =>
@@ -150,10 +150,10 @@ const RegisterHire = () => {
                 className="block border-[1px] mb-[16px] w-[100%] md:w-[100%]"
                 type="password"
               ></input>
+              <button className="btn width-[100%] bg-yellow-500 w-[100%] rounded bottom">
+                Daftar
+              </button>
             </div>
-            <button className="btn width-[100%] bg-yellow-500 w-[100%] rounded">
-              Daftar
-            </button>
           </div>
         </div>
       </form>

@@ -1,8 +1,20 @@
 import Header from "../../component/header";
 import Footer from "../../component/footer";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 
 const UserProfile = () => {
+  let { id } = useParams();
+  const [dataUser, setDataUser] = useState([]);
+  // useEffect(()=>{
+  //   axios
+  //     .get(`${id}`)
+  //     .then((res) => {
+  //       // console.log(dataProduct.images);
+  //       setDataUser(res.data.data);
+  //     })
+  //     .catch((err) => console.log(err));
+  // })
   return (
     <>
       <Header />
@@ -14,18 +26,14 @@ const UserProfile = () => {
               className="w-[100px] h-[100px] rounded-full"
             />
           </div>
-          <h1 className="font-bold text-[30px]">Fulan</h1>
-          <a className="text-gray-500 text-[20px] block">Web Developer</a>
-          <a className="text-gray-500 text-[20px] block">Freelancer</a>
+          <h1 className="font-bold text-[30px]">{dataUser.name}</h1>
+          <a className="text-gray-500 text-[20px] block">{dataUser.job_desk}</a>
           <a className="text-gray-500 text-[20px] block">
-            Purwokerto, Jawa Timur
+            {dataUser.job_status}
           </a>
-          <a className="text-gray-500 text-[20px] block">0821111111</a>
-          <h3 className="w-[200px] py-[10px]">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
-            erat orci, mollis nec gravida sed, ornare quis urna. Curabitur eu
-            lacus fringilla, vestibulum risus at.
-          </h3>
+          <a className="text-gray-500 text-[20px] block">{dataUser.domisili}</a>
+          <a className="text-gray-500 text-[20px] block">{dataUser.phone}</a>
+          <h3 className="w-[200px] py-[10px]">{dataUser.description}</h3>
           <Link to={`/halamanHire/`}>
             <button className="btn w-[100%] bg-purple-500 rounded">Hire</button>
           </Link>

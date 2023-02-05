@@ -76,7 +76,7 @@ const Register = () => {
             </div>
             <h1 className="text-[30px] font-bold">Sign Up</h1>
             <h2>Lorom ipsum dolor si amet uegas anet.</h2>
-            <div className="input my-[10px]">
+            <div className="my-[10px]">
               <label className="block">Nama</label>
               <input
                 onChange={(e) =>
@@ -126,10 +126,10 @@ const Register = () => {
                 className="block border-[1px] mb-[16px] w-[100%] md:w-[100%]"
                 type="password"
               ></input>
+              <button className="btn width-[100%] bg-yellow-500 w-[100%] rounded">
+                Daftar
+              </button>
             </div>
-            <button className="btn width-[100%] bg-yellow-500 w-[100%] rounded">
-              Daftar
-            </button>
           </div>
         </div>
       </form>
