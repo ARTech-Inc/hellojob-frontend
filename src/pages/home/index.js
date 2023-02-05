@@ -2,8 +2,19 @@
 import Header from "../../component/header/index"
 import {Link} from 'react-router-dom'
 import Footer from "../../component/footer"
+import axios from "axios"
+import { useState, useEffect } from "react"
 
 function Home(){
+
+    const [dataUsers, setDataUsers] = useState([])
+
+    useEffect(()=>{
+        axios.get("http://localhost:5000/api/v1/users")
+        .then((response) => setDataUsers(response.data.data))
+        .catch((error) => console.log(error.message))
+    }, [])
+
     return(
         <>
             <Header/>
@@ -26,110 +37,38 @@ function Home(){
                                 <Link className="text-[0.75rem]" to={"/home"}>Sortir berdasarkan fulltime</Link>
                             </ul>
                     </div>
+                
                     <button className="btn bg-[#5E50A1] rounded-md">Search</button>
                 </div>
             </section>
             
             <section className="workers container rounded-md mx-auto shadow-lg p-3 my-10 flex-col justify-between">
-                <div className="flex items-center justify-between">
-                    <div className="flex">
-                    <img className="w-full mx-5 " src={require("../../assets/img/avatar2.png")} alt="" />
-                    <div className="flex-col">
-                        <h2 className="text-md font-semibold">Louis Tomlinson</h2>
-                        <p className="text-[0.8rem]">Web Developer - Freelance </p>
-                        <div className="flex space-x-1 pt-1">
-                            <img className="w-5" src={require("../../assets/img/map-pin.png")}/>
-                            <p className="text-[0.8rem]">Yogyakarta</p>
-                        </div>
-                        <div className="flex space-x-2">
-                            <button className="bg-yellow-400 border-none text-[0.7rem] px-3 py-1 rounded-md mt-3 text-white font-bold">PHP</button>
-                            <button className="bg-yellow-400 border-none text-[0.7rem] px-3 py-1 rounded-md mt-3 text-white font-bold">Javascript</button>
-                            <button className="bg-yellow-400 border-none text-[0.7rem] px-3 py-1 rounded-md mt-3 text-white font-bold">HTML</button>
-                        </div>
-                    </div>
-                </div>
-                <button className="btn bg-[#5E50A1]">Lihat Profile</button>
-                </div>
-                
-                <div className="flex items-center justify-between mt-10">
-                    <div className="flex">
-                    <img className="w-full mx-5" src={require("../../assets/img/avatar2.png")} alt="" />
-                    <div className="flex-col">
-                        <h2 className="text-md font-semibold">Louis Tomlinson</h2>
-                        <p className="text-[0.8rem]">Web Developer - Freelance </p>
-                        <div className="flex space-x-1 pt-1">
-                            <img className="w-5" src={require("../../assets/img/map-pin.png")}/>
-                            <p className="text-[0.8rem]">Yogyakarta</p>
-                        </div>
-                        <div className="flex space-x-2">
-                            <button className="bg-yellow-400 border-none text-[0.7rem] px-3 py-1 rounded-md mt-3 text-white font-bold">PHP</button>
-                            <button className="bg-yellow-400 border-none text-[0.7rem] px-3 py-1 rounded-md mt-3 text-white font-bold">Javascript</button>
-                            <button className="bg-yellow-400 border-none text-[0.7rem] px-3 py-1 rounded-md mt-3 text-white font-bold">HTML</button>
-                        </div>
-                    </div>
-                </div>
-                <button className="btn bg-[#5E50A1]">Lihat Profile</button>
-                </div>
 
-                <div className="flex items-center justify-between mt-10">
-                    <div className="flex">
-                    <img className="w-full mx-5" src={require("../../assets/img/avatar2.png")} alt="" />
-                    <div className="flex-col">
-                        <h2 className="text-md font-semibold">Louis Tomlinson</h2>
-                        <p className="text-[0.8rem]">Web Developer - Freelance </p>
-                        <div className="flex space-x-1 pt-1">
-                            <img className="w-5" src={require("../../assets/img/map-pin.png")}/>
-                            <p className="text-[0.8rem]">Yogyakarta</p>
-                        </div>
-                        <div className="flex space-x-2">
-                            <button className="bg-yellow-400 border-none text-[0.7rem] px-3 py-1 rounded-md mt-3 text-white font-bold">PHP</button>
-                            <button className="bg-yellow-400 border-none text-[0.7rem] px-3 py-1 rounded-md mt-3 text-white font-bold">Javascript</button>
-                            <button className="bg-yellow-400 border-none text-[0.7rem] px-3 py-1 rounded-md mt-3 text-white font-bold">HTML</button>
-                        </div>
-                    </div>
-                </div>
-                <button className="btn bg-[#5E50A1]">Lihat Profile</button>
-                </div>
-
-                <div className="flex items-center justify-between mt-10">
-                    <div className="flex">
-                    <img className="w-full mx-5" src={require("../../assets/img/avatar2.png")} alt="" />
-                    <div className="flex-col">
-                        <h2 className="text-md font-semibold">Louis Tomlinson</h2>
-                        <p className="text-[0.8rem]">Web Developer - Freelance </p>
-                        <div className="flex space-x-1 pt-1">
-                            <img className="w-5" src={require("../../assets/img/map-pin.png")}/>
-                            <p className="text-[0.8rem]">Yogyakarta</p>
-                        </div>
-                        <div className="flex space-x-2">
-                            <button className="bg-yellow-400 border-none text-[0.7rem] px-3 py-1 rounded-md mt-3 text-white font-bold">PHP</button>
-                            <button className="bg-yellow-400 border-none text-[0.7rem] px-3 py-1 rounded-md mt-3 text-white font-bold">Javascript</button>
-                            <button className="bg-yellow-400 border-none text-[0.7rem] px-3 py-1 rounded-md mt-3 text-white font-bold">HTML</button>
+                {dataUsers.map((item)=>{
+                    return(
+                        <div className="flex items-center justify-between mt-10 pb-10 border-b-4" key={item.id}>
+                        <div className="flex">
+                        <img className="w-full mx-5 " src={require("../../assets/img/avatar2.png")} alt="" />
+                        <div className="flex-col">
+                            <h2 className="text-md font-semibold">{item.name}</h2>
+                            <p className="text-[0.8rem]">{item.skill_name}</p>
+                            <div className="flex space-x-1 pt-1">
+                                <img className="w-5" src={require("../../assets/img/map-pin.png")}/>
+                                <p className="text-[0.8rem]">Yogyakarta</p>
+                            </div>
+                            <div className="flex space-x-2">
+                                <button className="bg-yellow-400 border-none text-[0.7rem] px-3 py-1 rounded-md mt-3 text-white font-bold">PHP</button>
+                                <button className="bg-yellow-400 border-none text-[0.7rem] px-3 py-1 rounded-md mt-3 text-white font-bold">Javascript</button>
+                                <button className="bg-yellow-400 border-none text-[0.7rem] px-3 py-1 rounded-md mt-3 text-white font-bold">HTML</button>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <button className="btn bg-[#5E50A1]">Lihat Profile</button>
-                </div>
-
-                <div className="flex items-center justify-between mt-10">
-                    <div className="flex">
-                    <img className="w-full mx-5" src={require("../../assets/img/avatar2.png")} alt="" />
-                    <div className="flex-col">
-                        <h2 className="text-md font-semibold">Louis Tomlinson</h2>
-                        <p className="text-[0.8rem]">Web Developer - Freelance </p>
-                        <div className="flex space-x-1 pt-1">
-                            <img className="w-5" src={require("../../assets/img/map-pin.png")}/>
-                            <p className="text-[0.8rem]">Yogyakarta</p>
-                        </div>
-                        <div className="flex space-x-2">
-                            <button className="bg-yellow-400 border-none text-[0.7rem] px-3 py-1 rounded-md mt-3 text-white font-bold">PHP</button>
-                            <button className="bg-yellow-400 border-none text-[0.7rem] px-3 py-1 rounded-md mt-3 text-white font-bold">Javascript</button>
-                            <button className="bg-yellow-400 border-none text-[0.7rem] px-3 py-1 rounded-md mt-3 text-white font-bold">HTML</button>
-                        </div>
-                    </div>
-                </div>
-                <button className="btn bg-[#5E50A1]">Lihat Profile</button>
-                </div>
+                    <button className="btn bg-[#5E50A1]">Lihat Profile</button>
+                    </div>    
+                    
+                    )
+                })}
+               
             </section>
 
             <div className="pagination flex justify-center mb-10">
