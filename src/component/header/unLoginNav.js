@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const UnLogin = () => {
+const UnLogin = ({setIslogin}) => {
   return (
     <>
       <div className="p-[20px] flex justify-between">

@@ -1,9 +1,10 @@
-<<<<<<< HEAD
 import bell from '../../assets/img/bell.png'
 import mail from '../../assets/img/mail.png'
 import avatar from '../../assets/img/avatar.png'
+import { Navigate, Link } from 'react-router-dom'
 
-function LoginNav(){
+function LoginNav({setIsLogin}){
+    setIsLogin(true)
     return(
         <>
             <div className="navbar bg-base-100 px-[5vw]">
@@ -54,7 +55,12 @@ function LoginNav(){
                         </a>
                         </li>
                         <li><a>Settings</a></li>
-                        <li><a>Logout</a></li>
+                        <li><a
+                        onClick={()=>{
+                            localStorage.removeItem('@userLogin')
+                            setIsLogin(false)
+                        }}
+                        >Logout</a></li>
                     </ul>
                     </div>
                 </div>
@@ -64,33 +70,3 @@ function LoginNav(){
 }
 
 export default LoginNav
-=======
-import { Link } from "react-router-dom";
-
-const Login = () => {
-  return (
-    <>
-      <div className="p-[20px] flex justify-between">
-        <img
-          src={require("../../assets/img/app-logo.png")}
-          className="m-[10px]"
-          alt=""
-        />
-        <div className="flex">
-          <Link
-            to={"/login"}
-            className="btn px-[10px] border-[2px] border-[#5E50A1] font-bold text-[#5E50A1] mx-[10px] rounded"
-          >
-            Masuk
-          </Link>
-          <button className="btn px-[10px] border-[1px] bg-[#5E50A1] font-bold text-[#FFFFFF] mx-[10px] rounded">
-            <Link to="/loginOption">Daftar</Link>
-          </button>
-        </div>
-      </div>
-    </>
-  );
-};
-
-export default Login;
->>>>>>> 4d7f2789077f29d9f6302059a671a9796935c9f6

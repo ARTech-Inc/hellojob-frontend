@@ -1,11 +1,12 @@
-import LoginNav from "../../component/header/loginNav"
+// import LoginNav from "../../component/header/loginNav"
+import Header from "../../component/header/index"
 import {Link} from 'react-router-dom'
 import Footer from "../../component/footer"
 
 function Home(){
     return(
         <>
-            <LoginNav/>
+            <Header/>
             <section className="header bg-[#5E50A1] px-[6vw] py-3">
                 <h2 className="container text-white text-xl font-semibold">Top Jobs</h2>
             </section>
@@ -17,10 +18,12 @@ function Home(){
                     
                     <div className="dropdown dropdown-end px-2">
                         <label tabIndex={0} className="btn btn-ghost">Sort</label>
-                            <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                                <Link to={"/home"}>Sortir berdasarkan skill</Link>
-                                <Link to={"/home"}>Sortir berdasarkan freelance</Link>
-                                <Link to={"/home"}>Sortir berdasarkan fulltime</Link>
+                            <ul tabIndex={0} className="px-5 menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                                <Link className="text-[0.75rem]" to={"/home"}>Sortir berdasarkan skill</Link>
+                                <hr/>
+                                <Link className="text-[0.75rem]" to={"/home"}>Sortir berdasarkan freelance</Link>
+                                <hr/>
+                                <Link className="text-[0.75rem]" to={"/home"}>Sortir berdasarkan fulltime</Link>
                             </ul>
                     </div>
                     <button className="btn bg-[#5E50A1] rounded-md">Search</button>
@@ -129,6 +132,14 @@ function Home(){
                 </div>
             </section>
 
+            <div className="pagination flex justify-center mb-10">
+                <div className="btn-group">
+                    <button className="btn">1</button>
+                    <button className="btn btn-active">2</button>
+                    <button className="btn">3</button>
+                    <button className="btn">4</button>
+                </div>
+            </div>
             <Footer/>
             
         </>

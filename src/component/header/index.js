@@ -1,7 +1,24 @@
 import UnLogin from "./unLoginNav";
-import Login from "./loginNav";
+import LoginNav from "./loginNav";
+import { useEffect, useState } from "react";
+
 const Header = () => {
-  return <Login />;
+
+  const [isLogin, setIsLogin] = useState(false)
+
+  useEffect(()=>{
+    if(localStorage.getItem('@userLogin')){
+      setIsLogin(true)
+    } else {
+      setIsLogin(false)
+    }
+  }, [])
+
+  return(
+    <>
+      { isLogin ? (<LoginNav setIsLogin={setIsLogin}/>) : <UnLogin/> }
+    </>
+  )
 };
 
 export default Header;
