@@ -31,7 +31,7 @@ function App() {
             <Route path="/userProfile/:id" element={<UserProfile />} />
             <Route path="/halamanHire" element={<HalamanHire />} />
             <Route path="/registerHire" element={<RegisterHire />} />
-            <Route path="/loginOption" element={<LoginOption />} />
+            <Route path="/registerOption" element={<LoginOption />} />
             <Route path="/editProfile/" element={<EditProfile />} />
           </Routes>
         </BrowserRouter>

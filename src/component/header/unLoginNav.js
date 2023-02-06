@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const UnLogin = ({setIslogin}) => {
+const UnLogin = ({ setIslogin }) => {
   return (
     <>
       <div className="p-[20px] flex justify-between">
@@ -10,11 +10,14 @@ const UnLogin = ({setIslogin}) => {
           alt=""
         />
         <div className="flex">
-          <Link to={"/login"} className="btn px-[10px] border-[2px] border-[#5E50A1] font-bold text-[#5E50A1] mx-[10px] rounded">
+          <Link
+            to={"/login"}
+            className="btn px-[10px] border-[2px] border-[#5E50A1] font-bold text-[#5E50A1] mx-[10px] rounded"
+          >
             Masuk
           </Link>
           <button className="btn px-[10px] border-[1px] bg-[#5E50A1] font-bold text-[#FFFFFF] mx-[10px] rounded">
-            <Link to="/loginOption">Daftar</Link>
+            <Link to="/registerOption">Daftar</Link>
           </button>
         </div>
       </div>
