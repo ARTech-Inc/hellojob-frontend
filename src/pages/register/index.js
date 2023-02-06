@@ -66,12 +66,12 @@ const Register = () => {
               </div>
             </div>
           )}
-          <div className="invisible w-[0px] h-[0px] max-sm:hidden sm:visible p-[10px] w-[30vw] h-[90vh] bg-hero bg-no-repeat">
+          <div className="invisible w-[0px] h-[0px] max-sm:hidden sm:visible  w-[40vw] h-[90vh] bg-hero bg-no-repeat">
             <img
               src={require("../../assets/img/app-logo-white.png")}
               className="h-[20px] w-[60px] m-[20px]"
             />
-            <h1 className="font-bold m-[20px] text-[35px] text-[#FFFFFF]">
+            <h1 className="font-bold m-[20px] text-[35px] text-[#FFFFFF] w-[70%]">
               Temukan developer berbakat & terbaik di berbagai bidang keahlian
             </h1>
             {/* <img
