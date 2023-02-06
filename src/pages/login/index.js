@@ -36,17 +36,16 @@ function Login() {
 
   return (
     <>
-      <main className="h-[100vh] w-full">
+      <main className="h-[100vh] w-full bg-gray-100">
         <section className="h-full flex justify-center items-center flex-wrap">
           <div className=" bg-gray-100 h-[60] flex items-center flex-wrap">
-            <div className="w-[30vw] flex flex-wrap">
+            <div className="w-[30vw] flex flex-wrap hidden sm:flex">
               <img
                 className="h-full w-full "
                 src={require("../../assets/img/background1purple.png")}
                 alt="img-h"
               />
             </div>
-
             <form onSubmit={HandleLogin}>
               <div className="form mx-4">
                 <h1 className="text-4xl text-center font-semibold mb-5">
